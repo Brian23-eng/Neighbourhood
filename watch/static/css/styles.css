@@ -1,0 +1,13 @@
+.he {
+    padding: 25%;
+    color: white;
+}
+
+.landing {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url('https://vignette.wikia.nocookie.net/family-guy-fanverse/images/1/1f/Spooner_street_by_LsL925.png/revision/latest?cb=20140215144154');
+    background-size: cover;
+}
+
+.ho {
+    color: white;
+}
