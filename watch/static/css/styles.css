@@ -14,4 +14,26 @@
 
 .sign {
     padding-top: 45px;
+    color: white;
+}
+
+#ge {
+    color: white;
+}
+
+.reg {
+    padding-top: 25px;
+    height: 50%;
+}
+
+.up {
+    padding-top: 15px;
+}
+
+.log {
+    padding: 25px;
+}
+
+.ha {
+    margin-left: 15px;
 }
