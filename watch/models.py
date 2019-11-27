@@ -8,7 +8,7 @@ import datetime as dt
 
 class Neigbourhood(models.Model):
     name = models.CharField(max_length=120, blank=False)
-    dscription = models.TextField(max_length=500, blank=False)
+    description = models.TextField(max_length=500, blank=False)
     police_number = models.IntegerField(null=True, blank=True)
     health_number = models.IntegerField(null=True, blank=True)
     
@@ -41,7 +41,7 @@ class Business(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owner')
     
     def __str__(self):
-        return f'{self.name}Business'
+        return f'{self.name}Neigbourhood'
     
     
 
