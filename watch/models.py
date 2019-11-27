@@ -29,6 +29,14 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.username}Profile'
     
+    def save_profile(self):
+        self.save()
+        
+    def delete_profile(self):
+        self.delete()
+        
+    
+    
     
 
 
