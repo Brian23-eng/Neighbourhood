@@ -35,4 +35,8 @@ class Business(models.Model):
 
 
 class Post(models.Model):
-    pass
+    title = models.CharField(max_length=120, null=True)
+    post = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='post_owner')
+    hood = models.ForeignKey(Neigbourhood, on_delete=models.CASCADE, related_name='hood_post')
