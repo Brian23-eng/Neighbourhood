@@ -15,12 +15,23 @@ class Neigbourhood(models.Model):
     
     
 class Profile(models.Model):
-    pass
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    name = models.CharField(max_length=120, blank=True)
+    bio = models.TextField(max_length=500, blank=True)
+    profile_picture = models.ImageField(upload_to='images/')
+    location = models.CharField(max_length=120, blank=False)
+    hood = models.ForeignKey(Neigbourhood, on_delete=models.SET_NULL, related_name='member', blank=True, null=True )
+    
 
 
 
 class Business(models.Model):
-    pass
+    name = models.CharField(max_length=120, blank=False)
+    email = models.EmailField()
+    description = models.TextField(max_length=500, blank=True)
+    hood = models.ForeignKey(Neigbourhood, on_delete=models.CASCADE, related_name='business')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owner')
+    
 
 
 class Post(models.Model):
