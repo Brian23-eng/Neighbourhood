@@ -2,10 +2,13 @@ from django.test import TestCase
 from . models import Post, Profile, Business, Neigbourhood
 from django.contrib.auth.models import User
 
+
 class  TestProfile(TestCase):
     def setUp(self):
         self.user = User(username = 'Brian',email= 'g@gmail.com', password = '123')
         self.user.save()
+        
+
         
         self.hood = Neigbourhood(name = 'Kianda', description = 'Awesome hood', police_number = 0, health_number = 0 )
         self.hood.save()
@@ -42,6 +45,33 @@ class TestNeigbourhood(TestCase):
     def test_delete_hood(self):
         hoods = Neigbourhood.objects.all().delete()
         self.assertTrue(len(hoods)>0)
+        
+        
+class TestBusiness(TestCase):
+    def setUp(self):
+        self.user = User(username = 'Brian',email= 'g@gmail.com', password = '123')
+        self.user.save()
+        
+        self.hood = Neigbourhood(name = 'Kianda', description = 'Awesome hood', police_number = 0, health_number = 0 )
+        self.hood.save()
+        
+    
+        self.biz = Business(name = 'kibandaski', email= 'k@gmail.com', description = 'startup restaturant', hood=self.hood, user=self.user)
+        
+        
+    def test_instance(self):
+        self.assertTrue(isinstance(self.biz, Business))
+        
+    def test_save_hood(self):
+        business = Business.objects.all()
+        self.assertTrue(len(business)>0)
+        
+    def test_delete_hood(self):
+        business = Business.objects.all().delete()
+        self.assertTrue(len(business)>0)
+        
+        
+    
         
         
         
