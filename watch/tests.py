@@ -39,6 +39,10 @@ class TestNeigbourhood(TestCase):
         hood = Neigbourhood.objects.all()
         self.assertTrue(len(hood)>0)
         
+    def test_delete_hood(self):
+        hoods = Neigbourhood.objects.all().delete()
+        self.assertTrue(len(hoods)>0)
+        
         
         
     
