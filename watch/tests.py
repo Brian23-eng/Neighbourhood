@@ -35,6 +35,10 @@ class TestNeigbourhood(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.hood, Neigbourhood))
         
+    def test_save_hood(self):
+        hood = Neigbourhood.objects.all()
+        self.assertTrue(len(hood)>0)
+        
         
         
     
