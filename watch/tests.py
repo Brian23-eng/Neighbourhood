@@ -23,6 +23,19 @@ class  TestProfile(TestCase):
         profile = Profile.objects.all().delete()
         self.assertTrue(len(profile)>0)
         
+    def tearDown(self):
+        Profile.objects.all().delete()
+        
+class TestNeigbourhood(TestCase):
+    def setUp(self):
+        
+        self.hood = Neigbourhood(name = 'Kianda', description = 'Awesome hood', police_number = 0, health_number = 0 )
+        self.hood.save()
+        
+    def test_instance(self):
+        self.assertTrue(isinstance(self.hood, Neigbourhood))
+        
+        
         
     
    
