@@ -9,6 +9,9 @@ import datetime as dt
 class Neigbourhood(models.Model):
     name = models.CharField(max_length=120, blank=False)
     description = models.TextField(max_length=500, blank=False)
+    admin = models.ForeignKey("Profile", on_delete=models.CASCADE, related_name='ad')
+    location = models.CharField(max_length=60)
+    hood_logo = models.ImageField(upload_to='images/')
     police_number = models.IntegerField(null=True, blank=True)
     health_number = models.IntegerField(null=True, blank=True)
     
