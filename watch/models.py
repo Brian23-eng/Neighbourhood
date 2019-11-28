@@ -19,6 +19,15 @@ class Neigbourhood(models.Model):
     def __str__(self):
         return f'{self.name}Neigbourhood'
     
+    def create_hood(self):
+        self.save()
+        
+    def save_hood(self):
+        self.save()
+        
+    def delete_hood(self):
+        self.delete()
+    
     
     
 class Profile(models.Model):
