@@ -6,5 +6,6 @@ from django.conf.urls.static import static
 
 urlpatterns=[
     url('^$', views.home, name='home'),
-    url(r'^all-hoods',views.hoods, name='hood')
+    url(r'^all-hoods/',views.hoods, name='hood'),
+    url(r'^new-hood/', views.create_hood, name='new-hood')
 ]
