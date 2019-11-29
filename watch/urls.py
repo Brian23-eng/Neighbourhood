@@ -12,6 +12,7 @@ urlpatterns=[
     url(r'^profile/(?P<username>\w+)',views.profile,name='profile'),
     url(r'^profile/(?P<username>\w+)/edit', views.edit_profile, name='edit-profile'),
     url(r'^join_hood/(?P<id>\w+)', views.join_hood, name='join-hood'),
-    url(r'^leave_hood/(?P<id>\w+)', views.leave_hood, name='leave-hood')
+    url(r'^leave_hood/(?P<id>\w+)', views.leave_hood, name='leave-hood'),
+    url(r'^(?P<hood_id>\w+)/new-post/', views.create_post, name='post')
     
 ]
