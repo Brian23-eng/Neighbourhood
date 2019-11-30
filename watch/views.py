@@ -1,5 +1,6 @@
-from django.shortcuts import render,redirect
-from . models import *
+from django.shortcuts import render,redirect, get_object_or_404
+from . models import Profile,Neigbourhood,Business
+from .forms import PostForm, NeighbourHoodForm, BusinessForm
 
 def home(request):
     title = 'NeighbourHood'
@@ -75,7 +76,7 @@ def create_post(request, hood_id):
 
 
 def join_hood(request, id):
-    neighbourhood = get_object_or_404(NeighbourHood, id=id)
+    neighbourhood = get_object_or_404(Neigbourhood, id=id)
     request.user.profile.neighbourhood = neighbourhood
     request.user.profile.save()
     return redirect('hood')

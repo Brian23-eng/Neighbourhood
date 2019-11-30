@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
         <button type="button" id="sidebarCollapse" class="btn btn-sm btn-info">
-                            <i class="fas fa-align-left"></i>
-                        </button>
+                <i class="fas fa-align-left"></i>
+            </button>
         <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fas fa-align-justify"></i>
-                        </button>
+                <i class="fas fa-align-justify"></i>
+            </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav navbar-nav ml-auto">
@@ -13,13 +13,16 @@
                 <li class="nav-item active">
                     <img class="rounded-circle nav-img" src="{{ user.profile_picture.url }}" alt=""> &nbsp; <span class="text-white">{{user.username|title}}</span>
                 </li>
+                {% else %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                </li>
 
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                </li>
                 {% endif %}
             </ul>
         </div>
-        <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="title">
-            <button class="btn btn-default btn-sm my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-        </form>
     </div>
 </nav>
