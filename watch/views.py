@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from . models import Profile,Neigbourhood,Business
-from .forms import PostForm, NeighbourHoodForm, BusinessForm
+from .forms import PostForm, NeighbourHoodForm, BusinessForm, UpdateProfileForm
+from django.contrib.auth.models import User
 
 def home(request):
     title = 'NeighbourHood'

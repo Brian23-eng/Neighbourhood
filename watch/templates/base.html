@@ -14,13 +14,14 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet"> {% endblock %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Cinzel&display=swap" rel="stylesheet"> {% endblock %}
 </head>
 
 <div class="wrapper">
     {% include 'bar.html' %}
-    <div id="content" style="background-image:linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url('https://amp.insider.com/images/58ee300cdd0895d2668b4693-1920-960.jpg'); background-repeat:no-repeat;background-size:cover">
+    <div id="content" style="background-image:linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url('http://www.todayifoundout.com/wp-content/uploads/2014/05/plaka.jpg'); background-repeat:no-repeat;background-size:cover">
         {% include 'navbar.html' %} {% block content %} {% endblock %}
     </div>
 </div>

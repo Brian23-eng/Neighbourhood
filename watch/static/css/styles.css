@@ -258,3 +258,39 @@ a:focus {
     text-decoration: none;
     transition: all 0.3s;
 }
+
+#prof,
+#ho,
+#log,
+#edit,
+#no {
+    color: black;
+    font-weight: bold;
+}
+
+#log {
+    color: white;
+}
+
+.ne {
+    font-family: 'Arvo', serif;
+    font-size: 40px;
+}
+
+.we {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 25px;
+}
+
+#ig {
+    color: #3498DB;
+}
+
+.nam {
+    font-family: 'Cinzel', serif;
+    text-shadow: 1px 1px #AEB6BF;
+}
+
+.desc {
+    font-family: 'Abel', sans-serif;
+}
