@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect, get_object_or_404
-from . models import Profile,Neigbourhood,Business
+from . models import Profile,Neigbourhood,Business, Post
 from .forms import PostForm, NeighbourHoodForm, BusinessForm, UpdateProfileForm
 from django.contrib.auth.models import User
 
@@ -7,15 +7,14 @@ def home(request):
     title = 'NeighbourHood'
     return render(request, 'landing/index.html', {'title': title})
 
+
 def hoods(request):
     all_hoods = Neigbourhood.objects.all()
     all_hoods = all_hoods[::-1]
     params = {
-        'all_hoods': all_hoods
+        'all_hoods': all_hoods,
     }
-    
     return render(request, 'all_hoods.html', params)
-
 
 
 def create_hood(request):

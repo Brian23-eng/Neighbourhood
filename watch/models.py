@@ -16,6 +16,7 @@ class Neigbourhood(models.Model):
     health_number = models.IntegerField(null=True, blank=True)
     
     
+    
     def __str__(self):
         return f'{self.name}Neigbourhood'
     
@@ -36,7 +37,7 @@ class Profile(models.Model):
     bio = models.TextField(max_length=500, blank=True)
     profile_picture = models.ImageField(upload_to='images/')
     location = models.CharField(max_length=120, blank=False)
-    hood = models.ForeignKey(Neigbourhood, on_delete=models.SET_NULL, related_name='member', blank=True, null=True )
+    neighbourhood = models.ForeignKey(Neigbourhood, on_delete=models.SET_NULL, related_name='member', blank=True, null=True )
     
     def __str__(self):
         return f'{self.username}Profile'
@@ -65,7 +66,7 @@ class Business(models.Model):
     name = models.CharField(max_length=120, blank=False)
     email = models.EmailField()
     description = models.TextField(max_length=500, blank=True)
-    hood = models.ForeignKey(Neigbourhood, on_delete=models.CASCADE, related_name='business')
+    neighbourhood = models.ForeignKey(Neigbourhood, on_delete=models.CASCADE, related_name='business')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owner')
     
     def __str__(self):

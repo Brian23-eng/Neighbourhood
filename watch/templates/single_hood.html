@@ -65,11 +65,11 @@
                     <div class="col-md-4">
                         <div class="card mb-4 hpost">
                             <div class="card-body">
-                                <h5 class="card-title">{{post.title}}</h5>
-                                <p class="card-text">" {{post.post}} "
+                                <h5 class="card-title tit">{{post.title}}</h5>
+                                <p class="card-text">" <span class="post">{{post.post}}</span> "
                                 </p>
                                 <p class="card-text">By: <small class="text-white">
-                                    {{ post.user.user.username|title }}</small> <small style="float:right">{{post.date|date}}</small>
+                                    {{ post.user.user.username|title }}</small> <small class="text-white" style="float:right">{{post.date|date}}</small>
                                 </p>
                             </div>
                         </div>

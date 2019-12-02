@@ -1,0 +1,12 @@
+{% extends "registration/base.html" %}{% load static%} {% load bootstrap4%} {{ block.super }} {% block content %}
+<div class="container">
+    <h1 class="text-center">Registration complete</h1>
+    <div class="jumbotron">
+        <h3 class="text-center">Activate your account</h3>
+        <p>We will be sending you an email with an activation link which you'll need to click to verify this account. If you choose not to activate your account it will eventually become disabled.</p>
+        <p>Check your email.</p>
+        <a href="/accounts/login"> <span id="ig"> Complete</span></a>
+    </div>
+
+</div>
+{% endblock %}

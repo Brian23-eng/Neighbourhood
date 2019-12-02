@@ -294,3 +294,14 @@ a:focus {
 .desc {
     font-family: 'Abel', sans-serif;
 }
+
+.post {
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+}
+
+.tit {
+    font-family: 'Teko', sans-serif;
+    font-size: 30px;
+}
