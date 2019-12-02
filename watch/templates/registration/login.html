@@ -1,47 +1,18 @@
-{%extends "registration/base.html"%} {% load bootstrap4 %} {% block content %}
-<div class="container log">
+{% extends 'registration/base.html'%} {% load static%} {% load bootstrap4%} {% block content%}
+<div class="container" style="margin-top:10rem">
     <div class="row">
-        <!-- Empty div -->
-        <div class="col-md-4"></div>
-        <div class="col-md-4 login">
-            {% if form.errors %}
-            <p> Password or Username is incorrect </p>
-            {% endif %}
-            <div class="panel panel-default">
-
-                <div class="panel-heading">
-                    <button type="button" class="close" data-dismiss="form">&times;</button>
-                    <h3 class="text-center">Sign In</h3>
-                    <hr>
+        <div class="col-md-6 mx-auto reg">
+            <form action="/accounts/login/" method="POST">
+                {% csrf_token %} {% bootstrap_form form %}
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-sm" value="LogIn">
                 </div>
-                <div class="panel-body">
-
-                    <form action="/accounts/login/" method="POST">
-                        {% csrf_token %} {% bootstrap_form form%}
-
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-primary btn-sm" value="Login">
-                        </div>
-
-                        <input type="hidden" name="next" value='/all-hoods'>
-                        <div class="section">
-                            <p>Don't have an account? <a href="/accounts/register/"><span id="ig">Sign Up</span> </a></p>
-                        </div>
-
-                    </form>
-
+                <div class="form-group">
+                    <p class="log forgot">You don't have an account? <a href="/accounts/register/">Sign Up</a></p>
                 </div>
-
-            </div>
-
+                <input type="hidden" name="next" value="{{next}}">
+            </form>
         </div>
-        <!-- empty div -->
-        <div class="col-md-4"></div>
     </div>
-    <hr>
-    <footer>
-        <h4 class="text-center copy">&copy; branTech -2019</h4>
-    </footer>
 </div>
-
 {% endblock %}

@@ -32,7 +32,7 @@ def create_hood(request):
 
 
 def single_hood(request, hood_id):
-    hood = NeighbourHood.objects.get(id=hood_id)
+    hood = Neigbourhood.objects.get(id=hood_id)
     business = Business.objects.filter(neighbourhood=hood)
     posts = Post.objects.filter(hood=hood)
     posts = posts[::-1]
@@ -56,13 +56,13 @@ def single_hood(request, hood_id):
 
 
 def hood_members(request, hood_id):
-    hood = NeighbourHood.objects.get(id=hood_id)
+    hood = Neigbourhood.objects.get(id=hood_id)
     members = Profile.objects.filter(neighbourhood=hood)
     return render(request, 'members.html', {'members': members})
 
 
 def create_post(request, hood_id):
-    hood = NeighbourHood.objects.get(id=hood_id)
+    hood = Neigbourhood.objects.get(id=hood_id)
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
@@ -84,7 +84,7 @@ def join_hood(request, id):
 
 
 def leave_hood(request, id):
-    hood = get_object_or_404(NeighbourHood, id=id)
+    hood = get_object_or_404(Neigbourhood, id=id)
     request.user.profile.neighbourhood = None
     request.user.profile.save()
     return redirect('hood')
